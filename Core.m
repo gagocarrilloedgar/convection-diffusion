@@ -1,4 +1,31 @@
-function [T, nodes, mesh] = Core(ops, scheme,nodes, Pe, T_,delta)
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% Core
+% Description
+% Main operations of the program
+%
+% Inputs
+% ops: case selector
+% Pe: Peclet numer
+% T_: study parameter matrix 
+% nodes: struct with the mesh number size ( .x, .y)
+% scheme: scheme selection EDS / UDS
+% delta: minimum admissible error
+%
+% Ouputs
+% T: study parameter matrix 
+% nodes: struct with the mesh number size ( .x, .y)
+% mesh: struct with the vectors distributions parametrs
+% time: time taken by the core of the program to compute the solution
+% itt: numer of iteration fo the core og the program to compute the 
+% solution
+%
+%% CODE
+
+function [T, nodes, mesh,time, itt] = Core(ops, scheme,nodes, Pe, T_,delta)
 
 % Geomtry & flow data
 [geom,flow] = CaseParameters(ops, Pe);
@@ -19,6 +46,6 @@ T = ComputeBoundaries(nodes, mesh, flow.alpha, ops,T_);
     v, Pe, scheme);
 
 % Temperature computation
-[T, ~, ~] = Solver(mesh, nodes, T, coefs, delta, ops);
+[T, time, itt] = Solver(mesh, nodes, T, coefs, delta, ops);
 
 end

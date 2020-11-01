@@ -1,3 +1,22 @@
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% Validation
+% Description
+% Computes the graps of the both the num and the provided solution
+%
+% Inputs
+% mesh: struct with the vectors distributions parametrs
+% nodes: struct with the mesh number size ( .x, .y)
+% T: solution of the conv-diff case study
+% Pe: Peclet numer
+% Ouputs
+% 
+%
+%% CODE
+
 function Validation(nodes, mesh, T,Pe)
 
 mesh_d = mesh.x(1,nodes.x/2+1:end);

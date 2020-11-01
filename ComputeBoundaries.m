@@ -1,4 +1,23 @@
-
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% ComputeBoundaries
+% Description
+% Update phi qith the boudanry conditions
+%
+% Inputs
+% ops: case selector
+% Phi: study parameter matrix (T)
+% angle: angle of the flow for the SM & Diagonal flow
+% mesh: struct with the vectors distributions parametrs
+% nodes: struct with the mesh number size ( .x, .y)
+%
+% Ouputs
+% Phi: study parameter matrix (T)
+%
+%% CODE
 function [phi] = ComputeBoundaries(nodes, mesh, angle, ops,phi)
 
 phi_low = 273;

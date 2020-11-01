@@ -1,10 +1,29 @@
-
-function [geom, flow] = CaseParameters(ops, diffus)
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% CaseParameters
+% Description
+% Selection of the case study
+%
+% Inputs
+% ops: case selector
+% Pe: Peclet numer
+%
+% Ouputs
+% geom: struct with the geometry of teh case study
+% flow: stuct with the flow propoerties 
+%
+% % distribution
+%
+%% CODE
+function [geom, flow] = CaseParameters(ops, Pe)
 
 u0 = 1;                 % Velocity in [m/s]
 H = 1;                   % Height [m]
 gamma = 1;
-rho = diffus*gamma;
+rho = Pe*gamma;
 switch ops
     case 1
         alpha = 0;          % Angle [rad]

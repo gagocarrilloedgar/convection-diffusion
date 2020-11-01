@@ -1,4 +1,21 @@
-
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% MeshGeneration
+% Description
+% Structu containing the different mesh distributions, distances, surfaces,
+% nodes, etc
+%
+% Inputs
+% geom: struct with the geometry of teh case study
+% nodes: struct with the mesh number size ( .x, .y)
+%
+% Ouputs
+% mesh: struct with the vectors distributions parametrs
+%
+%% CODE
 function [mesh] = MeshGeneration(nodes, geom)
 
 %Inits

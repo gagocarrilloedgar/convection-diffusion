@@ -1,3 +1,28 @@
+%% Convection-Diffusion
+% Author:Gago, Edgar
+% Date 28/10/2020
+% Subject: Computational engineering
+%
+%% ComputeCoefficients
+% Description
+% Calculation of the different matrix coefficients
+%
+% Inputs
+% ops: case selector
+% T: study parameter matrix (T)
+% mesh: struct with the vectors distributions parametrs
+% nodes: struct with the mesh number size ( .x, .y)
+% gamma: 
+% v: struct of the flow velocities
+% Pe: Peclet numer
+% rho: rho distribution matrix
+% scheme: scheme selection EDS / UDS
+%
+% Ouputs
+% coefs: struct with the different matrix coefficients
+%
+%% CODE
+
 function [coefs] = ComputeCoefficients(nodes, mesh, rho, T, gamma, v, Pe, scheme)
 
 %Initialization to keep a cleaner code
